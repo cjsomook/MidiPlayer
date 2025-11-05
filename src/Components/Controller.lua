@@ -132,7 +132,7 @@ function Controller:_startScrubber()
     end
 
     controller.Scrubber.Hitbox.InputBegan:Connect(function(input)
-        if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
             dragging = true
             input.Changed:Connect(function()
                 if (input.UserInputState == Enum.UserInputState.End) then
