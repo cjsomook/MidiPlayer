@@ -37,14 +37,14 @@ function Sidebar:CreateElement(filePath)
     end
 
     element.InputBegan:Connect(function(input)
-        if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
             FastTween(element, tweenInfo, { BackgroundTransparency = 0.5 })
             Controller:Select(filePath)
         end
     end)
 
     element.InputEnded:Connect(function(input)
-        if (input.UserInputType == Enum.UserInputType.MouseButton1) then
+        if (input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch) then
             FastTween(element, tweenInfo, { BackgroundTransparency = 0.75 })
         end
     end)
